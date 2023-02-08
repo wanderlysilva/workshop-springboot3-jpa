@@ -12,21 +12,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.wanderlyspring.aulaspring1.entities.User;
 import com.wanderlyspring.aulaspring1.repositories.UserRepository;
 
-
 @Service
 public class UserService {
 
 	@Autowired
 	private UserRepository repository;
-	
-	public List<User> findAll(){
+
+	public List<User> findAll() {
 		return repository.findAll();
 	}
-	
-	public User findById (Long id) {
+
+	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
 	}
-	
-	
+
 }
